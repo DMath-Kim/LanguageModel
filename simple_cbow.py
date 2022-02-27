@@ -28,6 +28,7 @@ class SimpleCBOW:
         self.word_vecs2 = W_out.T
     
     def forward(self, contexts, target):
+        # contexts : onehot encoding / (mini-batch, window size * 2, one_hot_vector_size)
         h0 = self.in_layer0.forward(contexts[:, 0])
         h1 = self.in_layer1.forward(contexts[:, 1])
         h = (h0 + h1) * 0.5
