@@ -25,3 +25,8 @@ trainer = Trainer(model, optimizer)
 
 trainer.fit(contexts, target, max_epoch, batch_size)
 trainer.plot()
+
+# MatMul(Linear) 계층의 가중치 : Dense vector 확인
+word_vecs = model.word_vecs1
+for word_id, word in id_to_word.items():
+    print(word, word_vecs[word_id])
